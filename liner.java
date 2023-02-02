@@ -34,23 +34,30 @@ class liner {
     public static void main(String argc[]) {
 
         Scanner sc = new Scanner(System.in);
-        System.out.println("enter the 1 for binary search and 2 for liner search");
-        int x = sc.nextInt();
-        switch (x) {
-            case 1:
-                System.out.println("enter the element for search");
-                int y = sc.nextInt();
-                int l = 0;
-                int h = nub.length;
-                int posb = searchBinary(l, h, y);
-                System.out.println("element is at position=" + posb);
-                break;
-            case 2:
-                System.out.println("enter the element for search ");
-                int z = sc.nextInt();
-                int pos = searchLiner(z);
-                System.out.println("element is at position=" + pos);
-                break;
-        }
+       
+        boolean flag = true;
+        do {
+            System.out.println("enter the 1 for binary search and 2 for liner search and 3 for exit");
+            int x = sc.nextInt();
+            switch (x) {
+                case 1:
+                    System.out.println("enter the element for search");
+                    int y = sc.nextInt();
+                    int l = 0;
+                    int h = nub.length;
+                    int posb = searchBinary(l, h, y);
+                    System.out.println("element is at position=" + posb);
+                    break;
+                case 2:
+                    System.out.println("enter the element for search ");
+                    int z = sc.nextInt();
+                    int pos = searchLiner(z);
+                    System.out.println("element is at position=" + pos);
+                    break;
+                case 3:
+                    flag = false;
+            }
+        } 
+        while(flag);
     }
 }
